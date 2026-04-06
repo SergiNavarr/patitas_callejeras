@@ -2,7 +2,8 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu, X, Heart, PawPrint } from "lucide-react"
+import { Menu, Heart } from "lucide-react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
@@ -25,13 +26,17 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <nav className="container mx-auto flex h-16 items-center justify-between px-4 lg:px-8">
+      <nav className="container mx-auto flex h-16 md:h-24 items-center justify-between px-4 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary">
-            <PawPrint className="h-5 w-5 text-primary-foreground" />
-          </div>
-          <span className="text-xl font-semibold text-foreground">Patitas</span>
+        <Link href="/" className="flex items-center gap-3 transition-opacity hover:opacity-80">
+          <Image
+            src="/logo.png"
+            alt="Logo Patitas Callejeras"
+            width={60}
+            height={60}
+            className="rounded-full object-cover"
+          />
+          <span className="text-xl md:text-2xl font-bold text-primary">Patitas Callejeras</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -70,12 +75,6 @@ export function Navbar() {
               Enlaces de navegación del sitio web de Patitas
             </SheetDescription>
             <div className="flex flex-col gap-6 pt-8">
-              <div className="flex items-center gap-2">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary">
-                  <PawPrint className="h-5 w-5 text-primary-foreground" />
-                </div>
-                <span className="text-xl font-semibold text-foreground">Patitas</span>
-              </div>
               <nav className="flex flex-col gap-4">
                 {navLinks.map((link) => (
                   <SheetClose asChild key={link.href}>

@@ -225,10 +225,3 @@ export default function AnimalProfilePage({ params }: PageProps) {
     </div>
   )
 }
-
-// Generate static paths for all animals
-export async function generateStaticParams() {
-  return animalsData.map((animal) => ({
-    slug: animal.slug,
-  }))
-}
