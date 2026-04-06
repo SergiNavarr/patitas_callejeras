@@ -73,6 +73,12 @@ export default function HomePage() {
                   Donar
                 </Link>
               </Button>
+              <Button asChild variant="link" size="lg" className="gap-2 px-8">
+                <Link href="/transito">
+                  <Home className="h-5 w-5" />
+                  Se un hogar de tránsito
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
